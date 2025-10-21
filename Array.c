@@ -68,7 +68,6 @@ int main(void) {
             return 1;
         }
     }
-
     for (size_t i = 0; i < a.size; ++i) {
         printf("a[%zu] = %d\n", i, array_get(&a, i));
     }
