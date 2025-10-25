@@ -26,15 +26,15 @@ void stack_push(Stack *stack, int a){
         printf("Push malloc error\n");
         return;
     }
-    b->data = a;
-    b->next = stack->top;  // 新节点指向旧栈顶
-    stack->top = b;        // 更新栈顶
+    b -> data = a;
+    b -> next = stack -> top;  // 新节点指向旧栈顶
+    stack -> top = b;        // 更新栈顶
 }
 
 int stack_pop(Stack *stack){
-    int t = stack->top->data;
-    Node *a = stack->top;
-    stack->top = stack->top->next;
+    int t = stack -> top -> data;
+    Node *a = stack -> top;
+    stack -> top = stack -> top -> next;
     free(a);
     return t;
 } 
@@ -46,8 +46,8 @@ int main(){
     stack_push(a, 15);
     stack_push(a, 10);
 
-    printf("%d\n", a->top->data);        // 输出 10
-    printf("%d\n", a->top->next->data);  // 输出 15
+    printf("%d\n", a -> top -> data);        // 输出 10
+    printf("%d\n", a -> top -> next -> data);  // 输出 15
 
     printf("%d\n", stack_pop(a));
     printf("%d\n", stack_pop(a));
